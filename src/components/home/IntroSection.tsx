@@ -27,7 +27,7 @@ const IntroSection = () => {
             </div>
             <h3 className="text-xl font-bold mb-3 text-center text-varsal-darkblue">Our Vision</h3>
             <p className="text-gray-600 text-center mb-6">
-              To revolutionize healthcare through innovation, accessibility, and patient-centered approaches, creating a healthier global community.
+            We want to emerge as a leading Indian Pharmaceutical company meeting global healthcare needs by providing superior research-driven value to our customers through innovation, focus & specialization.
             </p>
             <div className="text-center">
               <Link to="/about#vision" className="inline-flex items-center text-varsal-blue hover:text-varsal-darkblue font-medium">

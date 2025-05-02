@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -7,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="bg-varsal-darkblue text-white pt-16 pb-6">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
           {/* About Section */}
           <div>
             <h3 className="text-lg font-semibold mb-4">About Varsal Healthcare</h3>
@@ -22,21 +21,16 @@ const Footer = () => {
                   Values
                 </Link>
               </li>
-              <li>
-                <Link to="/about#operations" className="text-gray-200 hover:text-varsal-lightblue transition-colors">
-                  Operations
-                </Link>
-              </li>
             </ul>
           </div>
 
           {/* Products Section */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Products</h3>
+            <h3 className="text-lg font-semibold mb-4">Operation</h3>
             <ul className="space-y-2">
               <li>
                 <Link to="/products" className="text-gray-200 hover:text-varsal-lightblue transition-colors">
-                  Our Solutions
+                  Product
                 </Link>
               </li>
               <li>
@@ -78,6 +72,13 @@ const Footer = () => {
                   Careers
                 </Link>
               </li>
+            </ul>
+          </div>
+
+          {/* Quick links Section */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Quick links</h3>
+            <ul className="space-y-2">
               <li>
                 <Link to="/contact" className="text-gray-200 hover:text-varsal-lightblue transition-colors">
                   Contact Us

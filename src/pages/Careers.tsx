@@ -1,119 +1,81 @@
-
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import PageHeader from "@/components/common/PageHeader";
 import { Button } from "@/components/ui/button";
-import { Search, MapPin, Briefcase, Upload } from "lucide-react";
+import { Search, MapPin, Briefcase, Upload, CheckCircle2 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 
 const Careers = () => {
-  // Sample job listings
-  const allJobs = [
-    {
-      id: 1,
-      title: "Senior Research Scientist",
-      department: "Research & Development",
-      location: "Boston, MA",
-      type: "Full-time",
-      description: "Lead research initiatives for developing innovative healthcare solutions and oversee clinical trials for new medical devices.",
-      requirements: [
-        "Ph.D. in Biomedical Engineering, Medical Sciences, or related field",
-        "5+ years of experience in medical device research",
-        "Strong publication record in peer-reviewed journals",
-        "Experience with regulatory compliance and clinical trials"
-      ]
-    },
-    {
-      id: 2,
-      title: "Medical Device Engineer",
-      department: "Engineering",
-      location: "San Francisco, CA",
-      type: "Full-time",
-      description: "Design and develop innovative medical devices with a focus on user experience and clinical efficacy.",
-      requirements: [
-        "Bachelor's or Master's degree in Biomedical Engineering or related field",
-        "3+ years of experience in medical device development",
-        "Familiarity with FDA regulatory requirements",
-        "Experience with CAD software and prototyping"
-      ]
-    },
-    {
-      id: 3,
-      title: "Quality Assurance Specialist",
-      department: "Quality Control",
-      location: "Chicago, IL",
-      type: "Full-time",
-      description: "Ensure compliance with quality standards and regulatory requirements for all medical products and processes.",
-      requirements: [
-        "Bachelor's degree in a scientific or engineering discipline",
-        "4+ years in quality assurance within a medical device or pharmaceutical company",
-        "Knowledge of ISO 13485, FDA QSR, and other relevant standards",
-        "Experience with quality management systems and auditing"
-      ]
-    },
-    {
-      id: 4,
-      title: "Clinical Data Analyst",
-      department: "Clinical Affairs",
-      location: "Remote",
-      type: "Full-time",
-      description: "Analyze clinical data from trials and post-market surveillance to support product development and regulatory submissions.",
-      requirements: [
-        "Bachelor's degree in Biostatistics, Epidemiology, or related field",
-        "3+ years experience in clinical data analysis",
-        "Proficiency in statistical analysis software (R, SAS, or similar)",
-        "Experience with electronic data capture systems"
-      ]
-    },
-    {
-      id: 5,
-      title: "Marketing Specialist - Healthcare",
-      department: "Marketing",
-      location: "New York, NY",
-      type: "Full-time",
-      description: "Develop and implement marketing strategies for healthcare products targeting medical professionals and healthcare facilities.",
-      requirements: [
-        "Bachelor's degree in Marketing, Business, or related field",
-        "2+ years of marketing experience in healthcare or medical devices",
-        "Strong understanding of digital marketing platforms",
-        "Excellent communication and creative skills"
-      ]
-    },
-    {
-      id: 6,
-      title: "Regulatory Affairs Associate",
-      department: "Regulatory",
-      location: "Minneapolis, MN",
-      type: "Full-time",
-      description: "Support regulatory submissions and maintain compliance with global healthcare regulations for medical devices and solutions.",
-      requirements: [
-        "Bachelor's degree in Life Sciences, Engineering, or related field",
-        "2+ years of experience in regulatory affairs for medical devices",
-        "Knowledge of FDA, EU MDR, and international regulatory requirements",
-        "Strong attention to detail and documentation skills"
-      ]
-    }
-  ];
-  
-  const [searchTerm, setSearchTerm] = useState("");
-  const [selectedJob, setSelectedJob] = useState(allJobs[0]);
-  
-  // Filter jobs based on search term
-  const filteredJobs = allJobs.filter(job => 
-    job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    job.department.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    job.location.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-  
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
-      <div className="flex-grow pt-16">
-        <PageHeader 
-          title="Careers at Varsal Healthcare" 
-          subtitle="Join our team and make a difference in global healthcare" 
-        />
+      <div className="flex-grow">
+        {/* Header with Background Image */}
+        <div className="relative w-full h-[300px] md:h-[400px] overflow-hidden bg-blue-800">
+          {/* Background Image */}
+          <div className="absolute inset-0">
+            <img 
+              src="/images/careers-banner.jpg" 
+              alt="Healthcare professionals working together"
+              className="w-full h-full object-cover"
+            />
+            {/* Dark Overlay */}
+            <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+          </div>
+          
+          {/* Content */}
+          <div className="relative h-full flex flex-col items-center justify-center text-white text-center px-4">
+            <h1 className="text-4xl md:text-5xl font-bold">Careers at Varsal Healthcare</h1>
+            <p className="mt-4 text-lg md:text-xl max-w-2xl">Join our team and make a difference in global healthcare</p>
+          </div>
+        </div>
+        
+        {/* Why Choose Varsal Healthcare Section */}
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl font-bold text-varsal-darkblue mb-6 text-center">Why Choose Varsal Healthcare</h2>
+              <div className="w-20 h-1 bg-varsal-lightblue mx-auto mb-8"></div>
+              <p className="text-lg text-gray-700 mb-8 text-center">
+                At Varsal Healthcare, we combine cutting-edge technology with compassionate care to deliver healthcare solutions that truly make a difference in patients' lives.
+              </p>
+              
+              <div className="space-y-6 mt-12">
+                <div className="flex items-start">
+                  <CheckCircle2 className="text-varsal-lightblue mr-3 h-6 w-6 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-semibold text-gray-900">Industry-Leading Innovation</h3>
+                    <p className="text-gray-600">Our research and development team constantly works to create breakthrough healthcare technologies.</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <CheckCircle2 className="text-varsal-lightblue mr-3 h-6 w-6 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-semibold text-gray-900">Quality Assurance</h3>
+                    <p className="text-gray-600">Every product undergoes rigorous testing and meets international quality standards before reaching our customers.</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <CheckCircle2 className="text-varsal-lightblue mr-3 h-6 w-6 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-semibold text-gray-900">Global Reach</h3>
+                    <p className="text-gray-600">Our solutions are available worldwide, helping healthcare providers across different regions.</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <CheckCircle2 className="text-varsal-lightblue mr-3 h-6 w-6 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-semibold text-gray-900">Patient-Centered Approach</h3>
+                    <p className="text-gray-600">We design our solutions with patients' needs and comfort as our primary focus.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
         
         {/* Company Culture Section */}
         <section className="py-16 bg-white">
@@ -208,110 +170,16 @@ const Careers = () => {
           </div>
         </section>
         
-        {/* Job Listings Section */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-varsal-darkblue mb-6 text-center">Open Positions</h2>
-            <div className="w-20 h-1 bg-varsal-lightblue mx-auto mb-12"></div>
-            
-            <div className="max-w-6xl mx-auto">
-              {/* Search Bar */}
-              <div className="mb-8 relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
-                <Input
-                  type="text"
-                  placeholder="Search by job title, department, or location..."
-                  className="pl-10"
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                />
-              </div>
-              
-              {/* Job Listings */}
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                {/* Job List */}
-                <div className="lg:col-span-1 space-y-4">
-                  {filteredJobs.length > 0 ? (
-                    filteredJobs.map(job => (
-                      <div 
-                        key={job.id}
-                        className={`p-4 rounded-lg cursor-pointer transition-all duration-200 ${selectedJob.id === job.id ? 'bg-varsal-light border-l-4 border-varsal-darkblue' : 'bg-white hover:bg-gray-50'}`}
-                        onClick={() => setSelectedJob(job)}
-                      >
-                        <h3 className="font-semibold text-gray-900">{job.title}</h3>
-                        <div className="flex items-center text-sm text-gray-600 mt-2">
-                          <Briefcase size={16} className="mr-2" />
-                          <span>{job.department}</span>
-                        </div>
-                        <div className="flex items-center text-sm text-gray-600 mt-1">
-                          <MapPin size={16} className="mr-2" />
-                          <span>{job.location}</span>
-                        </div>
-                      </div>
-                    ))
-                  ) : (
-                    <div className="bg-white p-6 rounded-lg text-center">
-                      <p className="text-gray-600">No jobs match your search criteria.</p>
-                    </div>
-                  )}
-                </div>
-                
-                {/* Job Details */}
-                <div className="lg:col-span-2">
-                  <div className="bg-white p-8 rounded-lg shadow-sm">
-                    <h3 className="text-2xl font-bold text-varsal-darkblue mb-2">{selectedJob.title}</h3>
-                    
-                    <div className="flex flex-wrap gap-4 mb-6">
-                      <div className="flex items-center text-gray-600">
-                        <Briefcase size={18} className="mr-2" />
-                        <span>{selectedJob.department}</span>
-                      </div>
-                      <div className="flex items-center text-gray-600">
-                        <MapPin size={18} className="mr-2" />
-                        <span>{selectedJob.location}</span>
-                      </div>
-                      <div className="flex items-center text-gray-600">
-                        <span className="px-2 py-1 bg-varsal-light text-varsal-darkblue text-sm rounded-md">{selectedJob.type}</span>
-                      </div>
-                    </div>
-                    
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-gray-800 mb-2">Job Description</h4>
-                      <p className="text-gray-700">{selectedJob.description}</p>
-                    </div>
-                    
-                    <div className="mb-8">
-                      <h4 className="font-semibold text-gray-800 mb-2">Requirements</h4>
-                      <ul className="list-disc pl-5 space-y-1 text-gray-700">
-                        {selectedJob.requirements.map((req, index) => (
-                          <li key={index}>{req}</li>
-                        ))}
-                      </ul>
-                    </div>
-                    
-                    <div className="flex flex-col sm:flex-row gap-4">
-                      <Button className="bg-varsal-darkblue hover:bg-varsal-blue">
-                        Apply Now
-                      </Button>
-                      <Button variant="outline" className="border-varsal-darkblue text-varsal-darkblue hover:bg-varsal-light">
-                        <Upload size={16} className="mr-2" /> Upload Resume
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              {filteredJobs.length === 0 && (
-                <div className="text-center mt-8">
-                  <Button 
-                    className="bg-varsal-darkblue hover:bg-varsal-blue"
-                    onClick={() => setSearchTerm("")}
-                  >
-                    View All Positions
-                  </Button>
-                </div>
-              )}
-            </div>
+        {/* Contact CTA Section */}
+        <section className="py-16 bg-varsal-darkblue text-white">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-3xl font-bold mb-6">Interested in Joining Our Team?</h2>
+            <p className="text-lg text-gray-200 mb-8 max-w-2xl mx-auto">
+              We're always looking for talented individuals to help us advance our mission of improving global healthcare. Get in touch with our HR team to learn about current opportunities.
+            </p>
+            <Button className="bg-varsal-lightblue hover:bg-varsal-blue text-white px-8 py-6 text-lg">
+              Contact Our HR Team
+            </Button>
           </div>
         </section>
       </div>
