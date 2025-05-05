@@ -3,10 +3,12 @@ interface PageHeaderProps {
   title: string;
   subtitle?: string;
   bgImage?: string;
+  style?: React.CSSProperties;
 }
 
-const PageHeader = ({ title, subtitle, bgImage }: PageHeaderProps) => {
+const PageHeader = ({ title, subtitle, bgImage, style }: PageHeaderProps) => {
   return (
+    <div style={style}>
     <div 
       className={`relative py-20 px-4 bg-varsal-darkblue ${bgImage ? 'bg-cover bg-center' : ''}`}
       style={bgImage ? { backgroundImage: `url(${bgImage})` } : {}}
@@ -20,7 +22,9 @@ const PageHeader = ({ title, subtitle, bgImage }: PageHeaderProps) => {
           <p className="text-lg md:text-xl text-gray-100 max-w-3xl mx-auto">
             {subtitle}
           </p>
+          
         )}
+        </div>
       </div>
     </div>
   );

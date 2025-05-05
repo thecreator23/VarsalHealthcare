@@ -66,9 +66,9 @@ const Contact = () => {
                       <div>
                         <h3 className="font-semibold text-gray-900 mb-1">Headquarters</h3>
                         <p className="text-gray-600">
-                          123 Healthcare Avenue<br />
-                          Boston, MA 02115<br />
-                          United States
+                        901, Kamdhenu, Plot No. 12, Sector 30,<br />
+                        Sanpada, Navi Mumbai <br />
+                        Maharashtra, India
                         </p>
                       </div>
                     </div>
@@ -78,7 +78,7 @@ const Contact = () => {
                       <div>
                         <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
                         <p className="text-gray-600">
-                          Main Office: +91 73402 16329<br />
+                          Main Office: +91 93513 26329<br />
                         </p>
                       </div>
                     </div>

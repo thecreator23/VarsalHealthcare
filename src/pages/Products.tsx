@@ -1,7 +1,7 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/common/PageHeader";
+import bg_image from '../Assets/Probanner/PHOTO-2025-05-04-14-41-59.jpg'; 
 
 const Products = () => {
   // Sample product data
@@ -60,10 +60,18 @@ const Products = () => {
     <div className="flex flex-col min-h-screen">
       <Navbar />
       <div className="flex-grow pt-16">
-        <PageHeader 
-          title="Our Products" 
-          subtitle="Discover Varsal Healthcare's innovative solutions for modern healthcare challenges" 
-        />
+      <PageHeader 
+      title="Our Products" 
+      subtitle="Discover Varsal Healthcare's innovative solutions for modern healthcare challenges"
+      style={{
+        backgroundImage: `url(${bg_image})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        color: "white",
+        padding: "50px 0",
+        minHeight: "300px"
+      }}
+    />
         
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
