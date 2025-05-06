@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
-import IndiaImage from "../../Assets/Mission/india-j97a3613-1440x536.jpg";
+import HomepicImage from "../../Assets/Homepic/doc.png";
 
 const HeroSection = () => {
   return (
     <div 
       className="relative min-h-[80vh] bg-cover bg-center flex items-center" 
-      style={{ backgroundImage: `url(${IndiaImage})` }}
+      style={{ backgroundImage: `url(${HomepicImage})` }}
     >
       <div className="absolute inset-0 bg-varsal-darkblue/70"></div>
       <div className="container mx-auto px-4 relative z-10">

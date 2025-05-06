@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Clock, Building, Users, CheckCircle } from "lucide-react";
+import lappyImage from "@/Assets/Contactus/lappy.jpg";
 
 const Contact = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -43,8 +44,13 @@ const Contact = () => {
     <div className="flex flex-col min-h-screen">
       <Navbar />
       <div className="flex-grow pt-16">
-        {/* Blue header banner */}
-        <div className="bg-blue-800 text-white py-16">
+        {/* Header with background image */}
+        <div
+          className="text-white py-16 bg-cover bg-center"
+          style={{
+            background: `darkblue`
+          }}
+        >
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-4xl md:text-5xl font-bold">Contact Us</h1>
           </div>
@@ -189,17 +195,25 @@ const Contact = () => {
         </section>
         
         {/* Partner Section */}
-        <section id="partner" className="py-16 bg-white">
+        <section
+          id="partner"
+          className="py-16 bg-cover bg-center text-white"
+          style={{
+            backgroundImage: `url(${lappyImage})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl font-bold text-varsal-darkblue mb-6">Partner With Us</h2>
-              <div className="w-20 h-1 bg-varsal-lightblue mx-auto mb-8"></div>
-              <p className="text-lg text-gray-700 mb-10">
+              <h2 className="text-3xl font-bold mb-6">Partner With Us</h2>
+              <div className="w-20 h-1 bg-white mx-auto mb-8"></div>
+              <p className="text-lg mb-10">
                 At Varsal Healthcare, we believe in the power of collaboration. We're always looking for strategic partnerships that can help us enhance our offerings and reach more patients worldwide.
               </p>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left mb-12">
-                <div className="bg-gray-50 p-6 rounded-lg">
+                <div className="bg-white/80 p-6 rounded-lg">
                   <div className="flex items-start">
                     <div className="bg-varsal-light p-3 rounded-full mr-4">
                       <Building className="h-6 w-6 text-varsal-darkblue" />
@@ -212,8 +226,8 @@ const Contact = () => {
                     </div>
                   </div>
                 </div>
-                
-                <div className="bg-gray-50 p-6 rounded-lg">
+
+                <div className="bg-white/80 p-6 rounded-lg">
                   <div className="flex items-start">
                     <div className="bg-varsal-light p-3 rounded-full mr-4">
                       <Users className="h-6 w-6 text-varsal-darkblue" />
@@ -227,8 +241,8 @@ const Contact = () => {
                   </div>
                 </div>
               </div>
-              
-              <Button 
+
+              <Button
                 className="bg-varsal-darkblue hover:bg-varsal-blue px-8 py-6 text-lg"
                 onClick={() => {
                   document.getElementById("contact-form")?.scrollIntoView({ behavior: "smooth" });
