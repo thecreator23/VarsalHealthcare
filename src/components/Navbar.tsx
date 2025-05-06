@@ -139,24 +139,24 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <Link to="/" className="text-gray-800 hover:text-varsal-darkblue font-medium transition-colors">
+          <a href="/" className="text-gray-800 hover:text-varsal-darkblue font-medium transition-colors">
             Home
-          </Link>
-          <Link to="/about" className="text-gray-800 hover:text-varsal-darkblue font-medium transition-colors">
+          </a>
+          <a href="/about" className="text-gray-800 hover:text-varsal-darkblue font-medium transition-colors">
             About Us
-          </Link>
-          <Link to="/products" className="text-gray-800 hover:text-varsal-darkblue font-medium transition-colors">
+          </a>
+          <a href="/products" className="text-gray-800 hover:text-varsal-darkblue font-medium transition-colors">
             Products
-          </Link>
-          <Link to="/investors" className="text-gray-800 hover:text-varsal-darkblue font-medium transition-colors">
+          </a>
+          <a href="/investors" className="text-gray-800 hover:text-varsal-darkblue font-medium transition-colors">
             Investors
-          </Link>
-          <Link to="/careers" className="text-gray-800 hover:text-varsal-darkblue font-medium transition-colors">
+          </a>
+          <a href="/careers" className="text-gray-800 hover:text-varsal-darkblue font-medium transition-colors">
             Careers
-          </Link>
-          <Link to="/contact" className="text-gray-800 hover:text-varsal-darkblue font-medium transition-colors">
+          </a>
+          <a href="/contact" className="text-gray-800 hover:text-varsal-darkblue font-medium transition-colors">
             Contact Us
-          </Link>
+          </a>
           <button 
             onClick={() => setShowSearch(true)} 
             className="text-gray-600 hover:text-varsal-darkblue transition-colors"

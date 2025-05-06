@@ -1,26 +1,51 @@
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/common/PageHeader";
-import bg_image from '../Assets/Probanner/PHOTO-2025-05-04-14-41-59.jpg'; 
+import bg_image from '../Assets/Probanner/PHOTO-2025-05-04-14-41-59.jpg';
 
 const Products = () => {
-  // Sample product data
+  const [expandedProductIds, setExpandedProductIds] = useState<number[]>([]);
+
+  const toggleExpand = (id: number) => {
+    setExpandedProductIds(prev =>
+      prev.includes(id) ? prev.filter(item => item !== id) : [...prev, id]
+    );
+  };
+
   const products = [
     {
       id: 1,
-      name: "VitalScan Pro",
+      name: "Gynecology",
       category: "Diagnostic Equipment",
       description: "Advanced diagnostic tool for comprehensive health monitoring with real-time data analysis and cloud integration.",
       benefits: ["Accurate vital sign monitoring", "Early disease detection", "User-friendly interface", "Remote monitoring capabilities"],
-      image: "https://images.unsplash.com/photo-1581093458791-9d64593e7ad4?auto=format&fit=crop&q=80"
+      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80",
+      medicines: [
+        { name: "Irofes-XT", link: "https://www.1mg.com/otc/irofes-xt-tablet-otc962108" },
+        { name: "Ehuca-D3", link: "https://www.1mg.com/drugs/ehuca-d3-tablet-965125" },
+        { name: "Efflux-D", link: "https://www.1mg.com/drugs/efflux-d-capsule-pr-964391" },
+        { name: "Efflux 40", link: "https://www.1mg.com/drugs/efflux-40-tablet-962103" },
+        { name: "Lycosal", link: "https://www.1mg.com/otc/lycosal-tablet-otc962436" },
+        { name: "Itravar", link: "https://www.1mg.com/marketer/varsal-healthcare-pvt-ltd-90027?srsltid=AfmBOoqxUJd9tZk0RJNaojjBPga5CFLX-NId6I6BGzfTNlOQXPzhZwF8" },
+        { name: "Q-Jest", link: "https://www.1mg.com/marketer/varsal-healthcare-pvt-ltd-90027?srsltid=AfmBOoqxUJd9tZk0RJNaojjBPga5CFLX-NId6I6BGzfTNlOQXPzhZwF8" },
+      ]
     },
     {
       id: 2,
-      name: "MediTrack System",
+      name: "Orthopedic",
       category: "Patient Management",
       description: "Comprehensive patient management system for healthcare facilities, streamlining administrative processes and enhancing care delivery.",
       benefits: ["Efficient patient record management", "Appointment scheduling", "Medication tracking", "Seamless integration with existing systems"],
-      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80"
+      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80",
+      medicines: [
+        { name: "Ehuca-D3", link: "https://www.1mg.com/drugs/ehuca-d3-tablet-965125" },
+        { name: "Efflux-D", link: "https://www.1mg.com/drugs/efflux-d-capsule-pr-964391" },
+        { name: "Varace-SP", link: "https://www.1mg.com/drugs/varace-sp-tablet-962125" },
+        { name: "Varace-P", link: "https://www.1mg.com/drugs/varace-p-tablet-962122" },
+        { name: "Varfast-OD", link: "https://www.1mg.com/drugs/varfast-od-tablet-962132" },
+        { name: "Vxrol", link: "https://www.1mg.com/drugs/vxrol-gel-962138" },
+      ]
     },
     {
       id: 3,
@@ -28,50 +53,37 @@ const Products = () => {
       category: "Therapeutic Devices",
       description: "Advanced neurological care devices designed to aid in rehabilitation and management of neurological conditions.",
       benefits: ["Personalized therapy programs", "Progress tracking", "Non-invasive treatment options", "Clinically proven results"],
-      image: "https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?auto=format&fit=crop&q=80"
+      image: "https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?auto=format&fit=crop&q=80",
+      medicines: [
+        { name: "Varfast-OD", link: "https://www.1mg.com/drugs/varfast-od-tablet-962132" },
+        { name: "Efflux-D", link: "https://www.1mg.com/drugs/efflux-d-capsule-pr-964391" },
+
+      ]
     },
     {
       id: 4,
-      name: "CareConnect Platform",
+      name: "Surgical",
       category: "Telehealth",
       description: "Secure telehealth platform connecting patients with healthcare providers for virtual consultations and remote care management.",
       benefits: ["HIPAA-compliant video conferencing", "Electronic prescriptions", "Integrated health records", "Mobile accessibility"],
-      image: "https://images.unsplash.com/photo-1581093196277-9f6070549f10?auto=format&fit=crop&q=80"
+      image: "https://images.unsplash.com/photo-1581093196277-9f6070549f10?auto=format&fit=crop&q=80",
+      medicines: [
+        { name: "Irofes-XT", link: "https://www.1mg.com/otc/irofes-xt-tablet-otc962108" },
+        { name: "Ziaprex 100", link: "https://www.1mg.com/drugs/ziaprex-100-tablet-964127" },
+        { name: "Ziaprex-O", link: "https://www.1mg.com/drugs/ziaprex-o-tablet-964128" },
+      ]
     },
-    {
-      id: 5,
-      name: "MobiCare Devices",
-      category: "Mobile Medical Equipment",
-      description: "Portable medical equipment for emergency response and field operations, ensuring quality care in any setting.",
-      benefits: ["Lightweight and durable", "Battery-operated", "Easy to transport", "Rapid deployment"],
-      image: "https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&q=80"
-    },
-    {
-      id: 6,
-      name: "BioPharma Solutions",
-      category: "Pharmaceuticals",
-      description: "Innovative pharmaceutical products targeting specific health conditions with minimal side effects and optimal efficacy.",
-      benefits: ["Research-backed formulations", "Improved patient outcomes", "Reduced side effects", "Cost-effective treatment options"],
-      image: "https://images.unsplash.com/photo-1585435557343-3b348b7b8bc4?auto=format&fit=crop&q=80"
-    }
   ];
 
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
       <div className="flex-grow pt-16">
-      <PageHeader 
-      title="Our Products" 
-      subtitle="Discover Varsal Healthcare's innovative solutions for modern healthcare challenges"
-      style={{
-        backgroundImage: `url(${bg_image})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        color: "white",
-        padding: "50px 0",
-        minHeight: "300px"
-      }}
-    />
+        <PageHeader 
+          title="Our Products" 
+          subtitle="Discover Varsal Healthcare's innovative solutions for modern healthcare challenges"
+          bgImage={bg_image}
+        />
         
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
@@ -101,9 +113,32 @@ const Products = () => {
                         <li key={index}>{benefit}</li>
                       ))}
                     </ul>
-                    <button className="mt-2 px-4 py-2 bg-varsal-darkblue text-white rounded hover:bg-varsal-blue transition-colors">
-                      Learn More
+                    <button
+                      className="mt-2 px-4 py-2 bg-varsal-darkblue text-white rounded hover:bg-varsal-blue transition-colors"
+                      onClick={() => toggleExpand(product.id)}
+                    >
+                      {expandedProductIds.includes(product.id) ? "Show Less" : "Learn More"}
                     </button>
+
+                    {expandedProductIds.includes(product.id) && (
+                      <div className="mt-4">
+                        <h4 className="font-semibold text-gray-800 mb-2">Medicines:</h4>
+                        <ul className="list-disc pl-5 text-gray-600 space-y-1">
+                          {product.medicines.map((med, index) => (
+                            <li key={index}>
+                              <a
+                                href={med.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-varsal-blue hover:underline"
+                              >
+                                {med.name}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}

@@ -5,7 +5,7 @@ import HomepicImage from "../../Assets/Homepic/doc.png";
 const HeroSection = () => {
   return (
     <div 
-      className="relative min-h-[80vh] bg-cover bg-center flex items-center" 
+      className="relative min-h-[93vh] bg-cover bg-center flex items-center" 
       style={{ backgroundImage: `url(${HomepicImage})` }}
     >
       <div className="absolute inset-0 bg-varsal-darkblue/70"></div>

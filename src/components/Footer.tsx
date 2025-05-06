@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from "../Assets/Logo/LOGO.png"; 
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -97,9 +98,10 @@ const Footer = () => {
         <div className="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
             <img 
-              src="/varsal-logo.png" 
+              src={logo}
+              width={100}
               alt="Varsal Healthcare Logo" 
-              className="h-12 mb-2 mx-auto md:mx-0"
+              className="h-12 mb-2 mx-auto md:mx-0 rounded-[50%] shadow-lg"
             />
             <p className="text-sm text-gray-300">
               Enhancing Quality of Life

@@ -183,6 +183,7 @@ const Careers = () => {
           </div>
         </section>
       </div>
+      <hr />
       <Footer />
     </div>
   );
