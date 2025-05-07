@@ -1,17 +1,43 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/common/PageHeader";
 import bg_image from '../Assets/Probanner/PHOTO-2025-05-04-14-41-59.jpg';
+import gynoimg from "../Assets/Product/gyno.jpeg";
+import orthoimg from "../Assets/Product/orthopedic.jpeg";
+import surimg from "../Assets/Product/surgical.jpeg";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 const Products = () => {
-  const [expandedProductIds, setExpandedProductIds] = useState<number[]>([]);
-
-  const toggleExpand = (id: number) => {
-    setExpandedProductIds(prev =>
-      prev.includes(id) ? prev.filter(item => item !== id) : [...prev, id]
-    );
+  // Track which product dialog is open
+  const [openDialogProductId, setOpenDialogProductId] = useState<number | null>(null);
+  
+  // Function to open a specific product dialog
+  const openProductDialog = (id: number) => {
+    console.log(`Opening dialog for product ${id}`);
+    setOpenDialogProductId(id);
   };
+  
+  // Function to close the currently open dialog
+  const closeProductDialog = () => {
+    console.log(`Closing dialog for product ${openDialogProductId}`);
+    setOpenDialogProductId(null);
+  };
+  
+  // Cleanup effect to reset dialog state when component unmounts
+  useEffect(() => {
+    return () => {
+      // Cleanup function to reset dialog state when component unmounts
+      setOpenDialogProductId(null);
+    };
+  }, []);
 
   const products = [
     {
@@ -20,7 +46,7 @@ const Products = () => {
       category: "Diagnostic Equipment",
       description: "Advanced diagnostic tool for comprehensive health monitoring with real-time data analysis and cloud integration.",
       benefits: ["Accurate vital sign monitoring", "Early disease detection", "User-friendly interface", "Remote monitoring capabilities"],
-      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80",
+      image: gynoimg,
       medicines: [
         { name: "Irofes-XT", link: "https://www.1mg.com/otc/irofes-xt-tablet-otc962108" },
         { name: "Ehuca-D3", link: "https://www.1mg.com/drugs/ehuca-d3-tablet-965125" },
@@ -37,7 +63,7 @@ const Products = () => {
       category: "Patient Management",
       description: "Comprehensive patient management system for healthcare facilities, streamlining administrative processes and enhancing care delivery.",
       benefits: ["Efficient patient record management", "Appointment scheduling", "Medication tracking", "Seamless integration with existing systems"],
-      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80",
+      image: orthoimg,
       medicines: [
         { name: "Ehuca-D3", link: "https://www.1mg.com/drugs/ehuca-d3-tablet-965125" },
         { name: "Efflux-D", link: "https://www.1mg.com/drugs/efflux-d-capsule-pr-964391" },
@@ -66,7 +92,7 @@ const Products = () => {
       category: "Telehealth",
       description: "Secure telehealth platform connecting patients with healthcare providers for virtual consultations and remote care management.",
       benefits: ["HIPAA-compliant video conferencing", "Electronic prescriptions", "Integrated health records", "Mobile accessibility"],
-      image: "https://images.unsplash.com/photo-1581093196277-9f6070549f10?auto=format&fit=crop&q=80",
+      image: surimg,
       medicines: [
         { name: "Irofes-XT", link: "https://www.1mg.com/otc/irofes-xt-tablet-otc962108" },
         { name: "Ziaprex 100", link: "https://www.1mg.com/drugs/ziaprex-100-tablet-964127" },
@@ -85,18 +111,22 @@ const Products = () => {
           bgImage={bg_image}
         />
         
-        <section className="py-16 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center mb-12">
+        <section className="py-12 sm:py-16 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto text-center mb-8 sm:mb-12">
               <p className="text-lg text-gray-700">
                 At Varsal Healthcare, we develop and manufacture a wide range of innovative healthcare products designed to meet the evolving needs of patients and healthcare professionals. Our solutions combine cutting-edge technology with user-friendly designs to improve healthcare outcomes.
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {products.map((product) => (
-                <div key={product.id} className="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden transition-transform hover:-translate-y-1 duration-300">
-                  <div className="h-48 overflow-hidden">
+                <div 
+                  key={product.id} 
+                  className="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden transition-transform hover:-translate-y-1 duration-300"
+                  data-product-id={product.id}
+                >
+                  <div className="h-48 sm:h-56 md:h-64 overflow-hidden">
                     <img 
                       src={product.image} 
                       alt={product.name} 
@@ -105,7 +135,7 @@ const Products = () => {
                   </div>
                   <div className="p-6">
                     <span className="text-sm text-varsal-blue font-medium">{product.category}</span>
-                    <h3 className="text-xl font-bold text-varsal-darkblue my-2">{product.name}</h3>
+                    <h3 className="text-lg sm:text-xl font-bold text-varsal-darkblue my-2">{product.name}</h3>
                     <p className="text-gray-600 mb-4">{product.description}</p>
                     <h4 className="font-semibold text-gray-800 mb-2">Key Benefits:</h4>
                     <ul className="list-disc pl-5 text-gray-600 mb-4">
@@ -113,32 +143,52 @@ const Products = () => {
                         <li key={index}>{benefit}</li>
                       ))}
                     </ul>
-                    <button
-                      className="mt-2 px-4 py-2 bg-varsal-darkblue text-white rounded hover:bg-varsal-blue transition-colors"
-                      onClick={() => toggleExpand(product.id)}
+                    
+                    <Dialog 
+                      open={openDialogProductId === product.id} 
+                      onOpenChange={(open) => {
+                        if (open) {
+                          openProductDialog(product.id);
+                        } else {
+                          closeProductDialog();
+                        }
+                      }}
                     >
-                      {expandedProductIds.includes(product.id) ? "Show Less" : "Learn More"}
-                    </button>
-
-                    {expandedProductIds.includes(product.id) && (
-                      <div className="mt-4">
-                        <h4 className="font-semibold text-gray-800 mb-2">Medicines:</h4>
-                        <ul className="list-disc pl-5 text-gray-600 space-y-1">
-                          {product.medicines.map((med, index) => (
-                            <li key={index}>
-                              <a
-                                href={med.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-varsal-blue hover:underline"
-                              >
-                                {med.name}
-                              </a>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
+                      <DialogTrigger asChild>
+                        <button
+                          className="mt-2 px-3 sm:px-4 py-2 bg-varsal-darkblue text-white rounded hover:bg-varsal-blue transition-colors duration-300 w-full sm:w-auto flex items-center justify-center gap-2 group"
+                          data-product-id={product.id}
+                        >
+                          Learn More
+                          <span className="inline-block transform transition-transform group-hover:translate-x-1">→</span>
+                        </button>
+                      </DialogTrigger>
+                      <DialogContent className="w-[95vw] sm:max-w-[425px] md:max-w-[600px] transition-all duration-300">
+                        <DialogHeader>
+                          <DialogTitle className="text-xl font-bold text-varsal-darkblue">{product.name} - Medicines</DialogTitle>
+                          <DialogDescription className="text-sm text-gray-600 pt-2">
+                            Available products in our {product.name} category
+                          </DialogDescription>
+                        </DialogHeader>
+                        <div className="mt-3 sm:mt-4">
+                          <ul className="list-disc pl-5 text-gray-600 space-y-3">
+                            {product.medicines.map((med, index) => (
+                              <li key={index}>
+                                <a
+                                  href={med.link}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-varsal-blue hover:text-varsal-darkblue transition-colors duration-200 hover:underline flex items-center gap-2"
+                                >
+                                  {med.name}
+                                  <span className="text-sm opacity-75">→</span>
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </DialogContent>
+                    </Dialog>
                   </div>
                 </div>
               ))}
@@ -147,8 +197,8 @@ const Products = () => {
         </section>
 
         {/* Operations Section */}
-        <section id="operations" className="py-16 bg-white">
-          <div className="container mx-auto px-4">
+        <section id="operations" className="py-12 sm:py-16 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl font-bold text-varsal-darkblue mb-6">Our Operations</h2>
               <div className="w-20 h-1 bg-varsal-lightblue mb-8"></div>
@@ -157,7 +207,7 @@ const Products = () => {
                 Varsal Healthcare operates state-of-the-art facilities across multiple countries, bringing together talented professionals from diverse backgrounds to create innovative healthcare solutions. Our operations span research and development, manufacturing, quality control, marketing, and distribution.
               </p>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 my-8 sm:my-12">
                 <div className="bg-gray-50 p-6 rounded-lg">
                   <h3 className="text-xl font-semibold text-varsal-darkblue mb-4">Research & Development</h3>
                   <p className="text-gray-700">
@@ -195,8 +245,8 @@ const Products = () => {
         </section>
         
         {/* Quality Section */}
-        <section id="quality" className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4">
+        <section id="quality" className="py-12 sm:py-16 bg-gray-50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl font-bold text-varsal-darkblue mb-6 text-center">Our Quality Commitment</h2>
               <div className="w-20 h-1 bg-varsal-lightblue mx-auto mb-8"></div>
@@ -205,7 +255,7 @@ const Products = () => {
                 At Varsal Healthcare, quality isn't just a department—it's a culture that permeates every aspect of our operations. We adhere to the highest standards in healthcare product development and manufacturing.
               </p>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
                 <div className="bg-white p-6 rounded-lg shadow-sm">
                   <h3 className="text-xl font-semibold text-varsal-darkblue mb-4">Certifications & Compliance</h3>
                   <p className="text-gray-700 mb-4">

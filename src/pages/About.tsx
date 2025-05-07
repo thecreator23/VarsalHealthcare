@@ -10,7 +10,7 @@ const About = () => {
       <div className="flex-grow">
         {/* Hero Section with background image - Matching the screenshot */}
         <div 
-          className="relative min-h-[80vh] bg-cover bg-center flex items-center" 
+          className="relative min-h-[100vh] bg-cover bg-center flex items-center" 
           style={{ backgroundImage: `url(${IndiaImage})` }}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-white/90 to-transparent"></div>

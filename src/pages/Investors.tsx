@@ -5,6 +5,7 @@ import PageHeader from "@/components/common/PageHeader";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { FileText, Download } from "lucide-react";
 import placeholder from "../Assets/Logo/placeholder.jpg"; 
+import investorimg from "../Assets/Images/investor.jpeg";
 
 const Investors = () => {
   // Sample financial data for chart
@@ -40,13 +41,13 @@ const Investors = () => {
                     className="w-full md:w-[400px] h-auto md:mr-6 mb-4 md:mb-0 shadow-lg rounded-lg"
                   />
                   <div className="text-lg text-gray-700 md:flex-1 p-4">
-                  As the visionary founder, Mr. Ajay Singh is deeply committed to embracing innovation and driving the organization toward cutting-edge advancements in research and technology. With a focus on developing new therapies and nurturing talent, he fosters a forward-thinking culture that continuously seeks to improve lives through scientific progress and creative solutions.
+                  As the visionary founder,<span className="font-bold"> Mr. Ajay Singh </span> is deeply committed to embracing innovation and driving the organization toward cutting-edge advancements in research and technology. With a focus on developing new therapies and nurturing talent, he fosters a forward-thinking culture that continuously seeks to improve lives through scientific progress and creative solutions.
                   </div>
                 </div>
 
                 <div className="flex flex-col md:flex-row items-center md:items-start w-full max-w-4xl mx-auto mb-4">
                   <div className="text-lg text-gray-700 md:flex-1 p-4">
-                  As the co-founder, Mrs. Rajni Singh  plays a key role in upholding the organization's ethical and social responsibilities. She ensures adherence to the highest standards while promoting sustainability, corporate citizenship, and global impact. Through a shared dedication to expanding access and leadership, Rajni Singh supports a mission that extends beyond business—to creating a positive, lasting difference worldwide.
+                  As the co-founder, <span className="font-bold">Mrs. Rajni Singh </span>  plays a key role in upholding the organization's ethical and social responsibilities. She ensures adherence to the highest standards while promoting sustainability, corporate citizenship, and global impact. Through a shared dedication to expanding access and leadership, Rajni Singh supports a mission that extends beyond business—to creating a positive, lasting difference worldwide.
                   </div>
                   <img 
                     src={placeholder}
@@ -66,13 +67,13 @@ const Investors = () => {
               </p> 
                 <div className="flex flex-col md:flex-row items-center md:items-start w-full max-w-4xl mx-auto mb-4">
                   <img 
-                    src={placeholder}
+                    src={investorimg}
                     width={400}
                     alt="Founder 1" 
                     className="w-full md:w-[400px] h-auto md:mr-6 mb-4 md:mb-0 shadow-lg rounded-lg"
                   />
                   <div className="text-lg text-gray-700 md:flex-1 p-4">
-                    Mr. Sandip Gangopadhyay
+                    <span className="font-bold">Mr. Sandip Gangopadhyay </span>
                     A seasoned pharmaceutical industry professional with extensive leadership experience, Mr. Sandip Gangopadhyay brings strategic insight and global perspective as a valued shareholder. With a background spanning operations, business development, and international markets, he plays a crucial role in guiding the company’s vision for innovation, sustainability, and ethical growth.
                   </div>
                 </div>

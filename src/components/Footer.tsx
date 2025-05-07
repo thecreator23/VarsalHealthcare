@@ -13,14 +13,14 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">About Varsal Healthcare</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/about#vision" className="text-gray-200 hover:text-varsal-lightblue transition-colors">
+                <a href="/about#vision" className="text-gray-200 hover:text-varsal-lightblue transition-colors">
                   Vision
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/about#values" className="text-gray-200 hover:text-varsal-lightblue transition-colors">
+                <a href="/about#values" className="text-gray-200 hover:text-varsal-lightblue transition-colors">
                   Values
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -30,14 +30,14 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Operation</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/products" className="text-gray-200 hover:text-varsal-lightblue transition-colors">
+                <a href="/products" className="text-gray-200 hover:text-varsal-lightblue transition-colors">
                   Product
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/products#quality" className="text-gray-200 hover:text-varsal-lightblue transition-colors">
+                <a href="/products#quality" className="text-gray-200 hover:text-varsal-lightblue transition-colors">
                   Quality
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -47,19 +47,19 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Investors</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/investors#shareholders" className="text-gray-200 hover:text-varsal-lightblue transition-colors">
+                <a href="/investors#shareholders" className="text-gray-200 hover:text-varsal-lightblue transition-colors">
                   Shareholder Info
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/investors#financials" className="text-gray-200 hover:text-varsal-lightblue transition-colors">
+                <a href="/investors#financials" className="text-gray-200 hover:text-varsal-lightblue transition-colors">
                   Financials
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/investors#annual-report" className="text-gray-200 hover:text-varsal-lightblue transition-colors">
+                <a href="/investors#annual-report" className="text-gray-200 hover:text-varsal-lightblue transition-colors">
                   Annual Report
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -69,26 +69,26 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Work With Us</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/careers" className="text-gray-200 hover:text-varsal-lightblue transition-colors">
+                <a href="/careers" className="text-gray-200 hover:text-varsal-lightblue transition-colors">
                   Careers
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
 
-          {/* Quick links Section */}
+          {/* Quick as Section */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Quick links</h3>
+            <h3 className="text-lg font-semibold mb-4">Quick as</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/contact" className="text-gray-200 hover:text-varsal-lightblue transition-colors">
+                <a href="/contact" className="text-gray-200 hover:text-varsal-lightblue transition-colors">
                   Contact Us
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/contact#partner" className="text-gray-200 hover:text-varsal-lightblue transition-colors">
+                <a href="/contact#partner" className="text-gray-200 hover:text-varsal-lightblue transition-colors">
                   Partner With Us
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -110,12 +110,12 @@ const Footer = () => {
           <div className="text-sm text-gray-300">
             <p>© {currentYear} Varsal Healthcare. All rights reserved.</p>
             <div className="flex space-x-4 mt-2 justify-center md:justify-end">
-              <Link to="/privacy-policy" className="hover:text-varsal-lightblue transition-colors">
+              <a href="/privacy-policy" className="hover:text-varsal-lightblue transition-colors">
                 Privacy Policy
-              </Link>
-              <Link to="/terms" className="hover:text-varsal-lightblue transition-colors">
+              </a>
+              <a href="/terms" className="hover:text-varsal-lightblue transition-colors">
                 Terms of Use
-              </Link>
+              </a>
             </div>
           </div>
         </div>

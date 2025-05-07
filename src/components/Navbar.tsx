@@ -129,13 +129,13 @@ const Navbar = () => {
     <header className="fixed w-full bg-white shadow-sm z-50">
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo - Updated to use imported logo */}
-        <Link to="/" className="flex items-center">
+        <a href="/" className="flex items-center">
           <img 
             src={logo} 
             alt="Varsal Healthcare Logo" 
             className="h-12 md:h-14"
           />
-        </Link>
+        </a>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
@@ -190,48 +190,48 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-white border-t">
           <div className="container mx-auto px-4 py-2 flex flex-col">
-            <Link 
-              to="/" 
+            <a 
+              href="/" 
               className="py-3 text-gray-800 hover:text-varsal-darkblue font-medium"
               onClick={() => setIsMenuOpen(false)}
             >
               Home
-            </Link>
-            <Link 
-              to="/about" 
+            </a>
+            <a 
+              href="/about" 
               className="py-3 text-gray-800 hover:text-varsal-darkblue font-medium"
               onClick={() => setIsMenuOpen(false)}
             >
               About Us
-            </Link>
-            <Link 
-              to="/products" 
+            </a>
+            <a 
+              href="/products" 
               className="py-3 text-gray-800 hover:text-varsal-darkblue font-medium"
               onClick={() => setIsMenuOpen(false)}
             >
               Products
-            </Link>
-            <Link 
-              to="/investors" 
+            </a>
+            <a 
+              href="/investors" 
               className="py-3 text-gray-800 hover:text-varsal-darkblue font-medium"
               onClick={() => setIsMenuOpen(false)}
             >
               Investors
-            </Link>
-            <Link 
-              to="/careers" 
+            </a>
+            <a 
+              href="/careers" 
               className="py-3 text-gray-800 hover:text-varsal-darkblue font-medium"
               onClick={() => setIsMenuOpen(false)}
             >
               Careers
-            </Link>
-            <Link 
-              to="/contact" 
+            </a>
+            <a 
+              href="/contact" 
               className="py-3 text-gray-800 hover:text-varsal-darkblue font-medium"
               onClick={() => setIsMenuOpen(false)}
             >
               Contact Us
-            </Link>
+            </a>
           </div>
         </div>
       )}
