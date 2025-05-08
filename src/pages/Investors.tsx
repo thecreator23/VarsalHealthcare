@@ -35,7 +35,7 @@ const Investors = () => {
               <div className="flex flex-col gap-10 items-center justify-between mb-8">
                 <div className="flex flex-col md:flex-row items-center md:items-start w-full max-w-4xl mx-auto mb-4">
                   <img 
-                    src={"/founder copy.jpeg"}
+                    src={"src/Assets/foundercopy.jpeg"}
                     width={400}
                     alt="Founder 1" 
                     className="w-full md:w-[400px] h-auto md:mr-6 mb-4 md:mb-0 shadow-lg rounded-lg"
@@ -51,7 +51,9 @@ const Investors = () => {
                       A seasoned pharmaceutical industry professional with extensive leadership experience, Mr. Sandip Gangopadhyay brings strategic insight and global perspective as a valued shareholder. With a background spanning operations, business development, and international markets, he plays a crucial role in guiding the company’s vision for innovation, sustainability, and ethical growth.
                     </div>
                   <img 
-                    src={"/founder2.jpeg"}
+                    src={"src/Assets/founder2.jpeg"}
+              
+                    
                     width={400}
                     alt="Founder 1" 
                     className="w-full md:w-[400px] h-auto md:mr-6 mb-4 md:mb-0 shadow-lg rounded-lg"
