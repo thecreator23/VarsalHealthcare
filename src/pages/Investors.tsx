@@ -6,8 +6,8 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 import { FileText, Download } from "lucide-react";
 import placeholder from "../Assets/Logo/placeholder.jpg"; 
 // import investorimg from "../Assets/Images/investor.jpeg";
-const founderImage1 = "/images/foundercopy.jpeg";
-const founderImage2 = "/images/founder2.jpeg";
+const founderImage1 = "https://i.postimg.cc/VkGy8CVg/foundercopy.png";
+const founderImage2 = "https://i.postimg.cc/nrbbWfPt/founder2.jpg";
 
 const Investors = () => {
   // Sample financial data for chart
