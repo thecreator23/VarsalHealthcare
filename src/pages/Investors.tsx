@@ -6,6 +6,8 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 import { FileText, Download } from "lucide-react";
 import placeholder from "../Assets/Logo/placeholder.jpg"; 
 // import investorimg from "../Assets/Images/investor.jpeg";
+const founderImage1 = "/images/foundercopy.jpeg";
+const founderImage2 = "/images/founder2.jpeg";
 
 const Investors = () => {
   // Sample financial data for chart
@@ -35,7 +37,7 @@ const Investors = () => {
               <div className="flex flex-col gap-10 items-center justify-between mb-8">
                 <div className="flex flex-col md:flex-row items-center md:items-start w-full max-w-4xl mx-auto mb-4">
                   <img 
-                    src={"src/Assets/foundercopy.jpeg"}
+                     src={founderImage1}
                     width={400}
                     alt="Founder 1" 
                     className="w-full md:w-[400px] h-auto md:mr-6 mb-4 md:mb-0 shadow-lg rounded-lg"
@@ -51,7 +53,7 @@ const Investors = () => {
                       A seasoned pharmaceutical industry professional with extensive leadership experience, Mr. Sandip Gangopadhyay brings strategic insight and global perspective as a valued shareholder. With a background spanning operations, business development, and international markets, he plays a crucial role in guiding the company’s vision for innovation, sustainability, and ethical growth.
                     </div>
                   <img 
-                    src={"src/Assets/founder2.jpeg"}
+                   src={founderImage2}
               
                     
                     width={400}
