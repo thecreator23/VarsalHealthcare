@@ -37,25 +37,23 @@ const Investors = () => {
               <div className="flex flex-col gap-10 items-center justify-between mb-8">
                 <div className="flex flex-col md:flex-row items-center md:items-start w-full max-w-4xl mx-auto mb-4">
                   <img 
-                     src={founderImage1}
+                     src={founderImage2}
                     width={400}
                     alt="Founder 1" 
                     className="w-full md:w-[400px] h-auto md:mr-6 mb-4 md:mb-0 shadow-lg rounded-lg"
                   />
                   <div className="text-lg text-gray-700 md:flex-1 p-4">
-                  As the visionary founder,<span className="font-bold"> Mr. Ajay Singh </span> is deeply committed to embracing innovation and driving the organization toward cutting-edge advancements in research and technology. With a focus on developing new therapies and nurturing talent, he fosters a forward-thinking culture that continuously seeks to improve lives through scientific progress and creative solutions.
-                  </div>
+                    <span className="font-bold">Mr. Sandip Gangopadhyay </span>
+                    Mr. Sandip Gangopadhyay is a visionary founder pharmaceutical leader with deep expertise in operations, business development, and global markets. As a founder, he brings strategic vision and a strong focus on innovation, sustainability, and ethical growth.
+                    </div>
                 </div>
 
                 <div className="flex flex-col md:flex-row items-center md:items-start w-full max-w-4xl mx-auto mb-4">
-                  <div className="text-lg text-gray-700 md:flex-1 p-4">
-                    <span className="font-bold">Mr. Sandip Gangopadhyay </span>
-                      A seasoned pharmaceutical industry professional with extensive leadership experience, Mr. Sandip Gangopadhyay brings strategic insight and global perspective as a valued shareholder. With a background spanning operations, business development, and international markets, he plays a crucial role in guiding the company’s vision for innovation, sustainability, and ethical growth.
-                    </div>
+                <div className="text-lg text-gray-700 md:flex-1 p-4">
+                  As the visionary founder,<span className="font-bold"> Mr. Ajay Singh </span> is deeply committed to embracing innovation and driving the organization toward cutting-edge advancements in research and technology. With a focus on developing new therapies and nurturing talent, he fosters a forward-thinking culture that continuously seeks to improve lives through scientific progress and creative solutions.
+                  </div>
                   <img 
-                   src={founderImage2}
-              
-                    
+                   src={founderImage1}
                     width={400}
                     alt="Founder 1" 
                     className="w-full md:w-[400px] h-auto md:mr-6 mb-4 md:mb-0 shadow-lg rounded-lg"
